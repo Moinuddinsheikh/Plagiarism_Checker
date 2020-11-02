@@ -1,0 +1,201 @@
+body{
+    overflow-x: hidden;
+}
+
+.load{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    padding-top: 20%;
+    text-align: center;
+    background-color: #aaaaaaaa;
+    z-index: 2;
+}
+
+.load-cancel{
+    margin-top: 10px;
+}
+
+.hidden{
+    display: none;
+}
+
+.body-row{
+    height: 521px;
+}
+
+.content-options{
+    background: linear-gradient(0deg, aquamarine, cornflowerblue);
+    box-shadow: inset -4px -1px 10px black;
+}
+
+.app-topbar{
+    text-align: center;
+    height: 100px;
+    padding-top: 35px;
+}
+
+#content-head{
+    font-size: 1.5em;
+    font-weight: 500;
+    text-shadow: 0px 0px 2px black;
+}
+
+.options{
+    margin: 10px 10px 40px 20px;
+    padding: 7px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.active{
+    color: white;
+    background: linear-gradient(90deg, #7D4295, #DA2533);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px black;
+}
+
+.option-icon{
+    width: 40px;
+    margin-top: 2px;
+}
+
+.contact{
+    text-align: center;
+    margin-top: 80px;
+}
+
+.contactus-icon-row{
+    padding-top: 12px;
+}
+
+.contactus-icon{
+    width: 20px;
+}
+
+.body-row > .col-lg-9 {
+    background:     linear-gradient(217deg, rgba(255,0,0,0.2), rgba(255,0,0,0) 40%),            
+                    linear-gradient(127deg, rgba(0,255,0,0.1), rgba(0,255,0,0) 30%),                    
+                    radial-gradient(circle at bottom right, rgba(0,0,255,.3), rgba(0,0,255,0) 60%);
+}
+
+.app-content-online{
+    display: none;
+}
+
+.app-content-online-result{
+    display: none;
+}
+
+.app-content {
+    padding: 30px 50px;
+}
+
+.app-content-head {
+    font-size: 1.4rem;
+    font-weight: 480;
+}
+
+.app-content .source-col, .app-content .target-col {
+    margin: 20px 0px;
+}
+
+.app-content .import-cancel-btn, .app-content  .source-drop-row, .app-content .target-drop-row, .app-content-online .import-cancel-btn {
+    display: none;
+}
+
+.app-content .app-icon {
+    width: 40px;
+}
+
+.app-content .app-head-2 {
+    font-size: 1.2rem;
+    padding-top: 4px;
+    font-weight: bold;
+}
+
+.app-content .import-btn, 
+.app-content .import-cancel-btn, 
+.app-content-online .import-btn, 
+.app-content-online .import-cancel-btn {
+    font-size: 0.8rem;
+    margin-left: 30px;
+}
+
+.source-row, .target-row {
+    margin-top: 10px;
+}
+
+#source-text, #target-text {
+    height: 225px;
+    margin-right: 15px;
+}
+
+#remark {
+    font-size: 1.1rem;
+}
+
+#scan-btn, #online-scan-btn {
+    width: 170px;
+    margin-left: 140px;
+}
+
+.holder_default {
+    height: 225px;
+    border: 2px dashed #0006;
+    width: 100%;
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+.progress {
+    margin-bottom: 5px;
+    width: 500px;
+    margin-top: -5px;
+    background: #88888844;
+}
+
+.app-content-online {
+    padding: 30px 50px;
+}
+
+.app-content-head-online {
+    font-size: 1.2rem;
+    padding-top: 4px;
+    font-weight: bold;
+}
+
+.formgroup-topic, .formgroup-file {
+    margin-top: 20px;
+    display: flex;
+}
+
+#online-topic {
+    width: 500px;
+    margin-left: 30px;
+    height: 28px;
+}
+
+#online-textarea {
+    width: 600px;
+    margin-left: 43px;
+    height: 245px;
+}
+
+.online-source-drop-row {
+    display: none;
+    margin-left: 0px;
+}
+
+.online-source-clear-btn {
+    margin-left: 65px;
+}
+
+.online-holder-default {
+    height: 220px;
+    border: 2px dashed #0006;
+    width: 100%;
+    margin: 10px 35px 10px 20px;
+    margin-top: 10px;
+}

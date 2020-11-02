@@ -1,0 +1,564 @@
+<html>
+    <head>
+        <title>Plagiarism Checker</title>
+        <script src="assets/js/jquery.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/main.css">
+    </head>
+    <body>
+
+        <div class="load">
+            <img src="assets/image/loading.gif"/><br>
+            <button class="btn btn-default load-cancel">cancel</button>
+        </div>
+        <div class="row body-row">
+            <div class="col-lg-3 content-options">
+                <div class="row app-topbar">
+                    <div class="col-lg-12">
+                        <div id="content-head">TruVisibility</div>
+                    </div>
+                </div>
+                <div class="row options active" id="option-1">
+                    <div class="col-lg-4">
+                        <img class="option-icon"  src="assets/image/stack.png"/>
+                    </div>
+                    <div class="col-lg-8">
+                        Side by side comparison
+                    </div>
+                </div>
+                <div class="row options" id="option-2">
+                    <div class="col-lg-4">
+                        <img class="option-icon" src="assets/image/global.png">
+                    </div>
+
+                    <div class="col-lg-8">
+                        Online Plagiarism
+                    </div>
+                </div>
+                <div class="row options" id="option-3">
+                    <div class="col-lg-4">
+                        <img class="option-icon" src="assets/image/option.png">
+                    </div>
+                    <div class="col-lg-8" style="padding-top: 11px">
+                        Options
+                    </div>
+                </div>
+                <div class="row contact">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-12 contact-heading">
+                                Connect with us
+                            </div>
+                        </div>
+                        <div class="row contactus-icon-row">
+                            <div class="col-lg-4"></div>
+                            <div class="col-lg-2">
+                                <img class="contactus-icon" src="assets/image/facebook.png">
+                            </div>
+                            <div class="col-lg-2">
+                                <img class="contactus-icon" src="assets/image/instagram.png">
+                            </div>
+                            <div class="col-lg-4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 app-content">
+                <div class="row app-content-head">
+                    <div class="col-lg-12">
+                        Paste Your content here
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 source-col">
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <img class="app-icon" src="assets/image/source-icon.png">
+                            </div>
+                            <div class="col-lg-3 app-head-2">
+                                <p>Source</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-5">
+                                <button id="source-import-btn" class="btn btn-primary import-btn">Import file</button>
+                                <button id="source-import-cancel-btn" class="btn btn-primary import-cancel-btn">cancel</button>
+                            </div>
+                        </div>
+                        <div class="row source-drop-row">
+                            <div class="col-lg-12">
+                                <div class="row drop-heading">
+                                    Drop Your files here
+                                </div>
+                                <div class="row">
+                                    <div id="source-holder" class="holder_default">
+                                        <img src="" width="340" height="200" style="border: 3px dashed #7A97FC;" class="hidden"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row source-row">
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <textarea id="source-text" class="textarea form-control" name="source" placeholder="Insert your text here.."></textarea>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4"></div>
+                                    <div class="col-lg-4">
+                                        <button class="btn btn-default source-clear">clear field</button>
+                                    </div>
+                                    <div class="col-lg-4"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 target-col">
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <img class="app-icon" src="assets/image/target-icon.png">
+                            </div>
+                            <div class="col-lg-3 app-head-2">
+                                <p>Target</p>
+                            </div>
+                            <div class="col-lg-2"></div>
+                            <div class="col-lg-5">
+                                <button id="target-import-btn" class="btn btn-primary import-btn">Import file</button>
+                                <button id="target-import-cancel-btn" class="btn btn-primary import-cancel-btn">cancel</button>
+                            </div>
+                        </div>
+                        <div class="row target-drop-row">
+                            <div class="col-lg-12">
+                                <div class="row drop-heading">
+                                    Drop Your files here
+                                </div>
+                                <div class="row">
+                                    <div id="target-holder" class="holder_default">
+                                        <img src="" width="340" height="200" style="border: 3px dashed #7A97FC;" class="hidden"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row target-row">
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <textarea id="target-text" class="textarea form-control" name="target"  placeholder="Insert your text here.."></textarea>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4"></div>
+                                    <div class="col-lg-4">
+                                        <button class="btn btn-default target-clear">clear field</button>
+                                    </div>
+                                    <div class="col-lg-4"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row app-content-result-row">
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="progress">
+                                <div class="progress-bar bg-danger" style="width:0%"></div>
+                            </div>
+                        </div>
+                        <div class="row" id="remark">
+                            Remarks: ......
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <button id="scan-btn" class="btn btn-primary">SCAN</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 app-content-online">
+                <div class="row app-content-head-online">
+                    <div class="col-lg-12">
+                        Add topic and a file content here
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 app-content-online-form">
+                        <p class="formgroup-topic">Topic : <input type="text" id="online-topic" class="form-control">
+                        </p>
+                        <div class="row online-source-drop-row">
+                            <div class="col-lg-12">
+                                <div class="row drop-heading">
+                                    Drop Your files here
+                                </div>
+                                <div class="row">
+                                    <div id="online-source-holder" class="online-holder-default">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="formgroup-file">
+                            File : <textarea class="textarea form-control" id="online-textarea"
+                                placeholder="Insert your text here..."></textarea>                        </p>
+                        <p>
+                            <button class="btn btn-default online-source-clear-btn import-btn">clear field</button>
+                            <button id="online-source-import-btn" class="btn btn-primary import-btn">+ Import file</button>
+                            <button id="online-source-cancel-btn" class="btn btn-primary import-cancel-btn">cancel</button>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6"></div>
+                    <div class="col-lg-6">
+                        <button id="online-scan-btn" class="btn btn-primary">SCAN</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 app-content-online-result">
+                <div class="row app-content-head-online-result">
+                    <div class="col-lg-9">
+                        Result...
+                    </div>
+                    <div class="col-lg-3">
+                        <button class="btn btn-dark result-back-btn">back</button>      </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table class="table table-bordered result-tbl">
+                            <thead>
+                                <tr>
+                                    <td><b>Links</b></td>
+                                    <td><b>Similarity Percentage</b></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan='2'><img id="res-load" src="assets/image/loading.gif"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+<script>
+let spawn = require("child_process").spawn; 
+
+$(document).ready(function(){
+    var ld = $(".load");
+
+    $('#scan-btn').click(function(){
+        var source_text = $('#source-text').val();
+        var target_text = $('#target-text').val();
+        if(source_text == "" || target_text == ""){
+            alert("Please provide source and target text!");
+            return false;
+        }
+        ld.fadeIn();
+        var process = spawn('python',["text_given.py",source_text,target_text] ); 
+        process.stdout.on('data', function(data) {
+            ld.fadeOut(); 
+            var s = data.toString();
+            s = parseFloat(s).toFixed(2);
+            // alert(s);
+            $('.progress-bar').css('width',s+'%');
+            $('#remark').html("Remarks: Source text matches "+s+"% with the Target text.");
+        }); 
+    });
+
+    var holder2 = document.getElementById('source-holder');
+    holder2.ondragover = function () { $(this).addClass('hover'); return false; };
+    holder2.ondrop = function (e) {
+        ld.fadeIn();
+        $(this).toggleClass('hover hidden');
+        e.preventDefault();
+        var file = e.dataTransfer.files[0];
+        nm = file.name;
+        var ext = nm.substring((nm.indexOf('.')+1),nm.length);
+        if (ext=="txt"){
+            var process = spawn('python',["txt_link_extract.py",file.name] );
+            process.stdout.on('data', function(data) { 
+                var s = data.toString();
+                $('#source-text').html(s);
+            }); 
+        }
+        else if(ext == "docx"){
+            var process = spawn('python',["word_link_extract.py",file.name] );
+            process.stdout.on('data', function(data) { 
+                var s = data.toString();
+                $('#source-text').html(s);
+            });
+        }
+        $('.source-drop-row').fadeOut();
+        $('#source-import-cancel-btn').fadeOut();
+        $('.source-row').delay(400).fadeIn();
+        $('#source-import-btn').delay(400).fadeIn();
+        ld.fadeOut();
+        $(this).toggleClass('hidden');
+    };
+
+    var holder3 = document.getElementById('target-holder');
+    holder3.ondragover = function () { $(this).addClass('hover'); return false; };
+    holder3.ondrop = function (e) {
+        ld.fadeIn();
+        $(this).toggleClass('hover hidden');
+        e.preventDefault();
+        var file = e.dataTransfer.files[0];
+        nm = file.name;
+        var ext = nm.substring((nm.indexOf('.')+1),nm.length);
+        if (ext=="txt"){
+            var process = spawn('python',["txt_link_extract.py",file.name] );
+            process.stdout.on('data', function(data) { 
+                var s = data.toString();
+                $('#target-text').html(s);
+            }); 
+        }
+        else if(ext == "docx"){
+            var process = spawn('python',["word_link_extract.py",file.name] );
+            process.stdout.on('data', function(data) { 
+                var s = data.toString();
+                $('#target-text').html(s);                
+            });
+        }
+        $('.target-drop-row').fadeOut();
+        $('#target-import-cancel-btn').fadeOut(); 
+        $('.target-row').delay(400).fadeIn();     
+        $('#target-import-btn').delay(400).fadeIn();
+        ld.fadeOut();
+        $(this).toggleClass('hidden');
+    };  
+
+    var holder4 = document.getElementById('online-source-holder');
+    holder4.ondragover = function () { $(this).addClass('hover'); return false; };
+    holder4.ondrop = function (e) {
+        ld.fadeIn();
+        $(this).toggleClass('hover hidden');
+        e.preventDefault();
+        var file = e.dataTransfer.files[0];
+        nm = file.name;
+        var ext = nm.substring((nm.indexOf('.')+1),nm.length);
+        if (ext=="txt"){
+            var process = spawn('python',["txt_link_extract.py",file.name] );
+            process.stdout.on('data', function(data) { 
+                var s = data.toString();
+                $('#online-textarea').html(s);
+            }); 
+        }
+        else if(ext == "docx"){
+            var process = spawn('python',["word_link_extract.py",file.name] );
+            process.stdout.on('data', function(data) { 
+                var s = data.toString();
+                $('#online-textarea').html(s);
+            });
+        }
+        $('.online-source-drop-row').fadeOut();
+        $('#online-source-cancel-btn').fadeOut();
+        $('#online-source-import-btn').delay(400).fadeIn();
+        $('.online-source-clear-btn').delay(400).fadeIn();
+        $('.formgroup-file').delay(400).fadeIn();
+        ld.fadeOut();
+        $(this).toggleClass('hidden');
+    };
+
+    $('#source-import-btn').click(function(){
+        $('.source-row').fadeOut();
+        $('#source-import-btn').fadeOut();
+        $('.source-drop-row').delay(400).fadeIn();
+        $('#source-import-cancel-btn').delay(400).fadeIn();
+    });
+
+    $('#target-import-btn').click(function(){
+        $('.target-row').fadeOut();
+        $('#target-import-btn').fadeOut();
+        $('.target-drop-row').delay(400).fadeIn();
+        $('#target-import-cancel-btn').delay(400).fadeIn();
+    });
+
+    $('#source-import-cancel-btn').click(function(){
+        $('.source-drop-row').fadeOut();        
+        $('#source-import-cancel-btn').fadeOut();
+        $('.source-row').delay(400).fadeIn();
+        $('#source-import-btn').delay(400).fadeIn();
+    });
+
+    $('#target-import-cancel-btn').click(function(){
+        $('.target-drop-row').fadeOut();
+        $('#target-import-cancel-btn').fadeOut();
+        $('.target-row').delay(400).fadeIn();
+        $('#target-import-btn').delay(400).fadeIn();
+    });
+
+    $('.source-clear').click(function(){
+        $('#source-text').val("");
+    });
+
+    $('.target-clear').click(function(){
+        $('#target-text').val("");
+    });
+
+    $('.result-back-btn').click(function(){
+        $('.app-content-online-result').fadeOut();
+        $('.app-content-online').fadeIn();
+    });
+
+    $('#online-source-import-btn').click(function(){
+        $('.formgroup-file').fadeOut();
+        $('#online-source-import-btn').fadeOut();
+        $('.online-source-clear-btn').fadeOut();
+        $('.online-source-drop-row').delay(400).fadeIn();
+        $('#online-source-cancel-btn').delay(400).fadeIn();
+    });
+
+
+    $('#online-source-cancel-btn').click(function(){
+        $('.online-source-drop-row').fadeOut();
+        $('#online-source-cancel-btn').fadeOut();
+        $('.formgroup-file').delay(400).fadeIn();
+        $('#online-source-import-btn').delay(400).fadeIn();
+        $('.online-source-clear-btn').delay(400).fadeIn();
+    });
+
+    $('.online-source-clear-btn').click(function(){
+        $('#online-textarea').html("");
+    });
+
+    $('#option-1').click(function(){        
+        $('.app-content-online').fadeOut();
+        $('.app-content').fadeIn();
+        $('.active').removeClass('active');
+        $(this).addClass('active');
+        $('#online-topic').val("");
+        $('#online-textarea').val("");
+        $('.result-tbl tbody').find('tr:lt(5)').remove();
+    });
+
+    $('#option-2').click(function(){
+        $('.app-content').fadeOut();
+        $('.app-content-online').fadeIn();
+        $('.active').removeClass('active');
+        $(this).addClass('active');
+        $('#source-text').val("");
+        $('#target-text').val("");
+        $('.progress-bar').css('width','0%');
+        $('#remark').html("Remarks: ");
+    });
+
+    $('.load-cancel').click(function(){
+        $('.load-cancel').css("display","none");
+        ld.fadeOut();
+    });
+
+    $('#online-scan-btn').click(function(){
+        var topic = $('#online-topic').val();
+        var onlinetext = $('#online-textarea').html();
+        if (topic == "" || onlinetext == ""){
+            alert("Please provide topic name and source text!");
+            return false;
+        }
+        ld.fadeIn();
+        $('.load-cancel').css("display","block");
+        var link_arr; var s;
+        var process_1 = spawn('python',["links_extract.py",topic] ); 
+        var res_tbl = $('table tbody tr:last');
+        process_1.stdout.on('data', function(data) { 
+            s = data.toString();  
+            s = s.substring(1,(s.length-2));
+            s = s.split("'").join("");
+            link_arr = s.split(', ');
+            $('.app-content-online').fadeOut();
+            $('.app-content-online-result').fadeIn();
+            res_tbl.fadeIn();
+            $('.load-cancel').css("display","none");
+            ld.fadeOut();
+            console.log(link_arr);
+            // console.log(link_arr[0]);
+            var process_2 = spawn('python', ["webpage_extract.py", link_arr[0]]);
+            process_2.stdout.on('data', function (data1) {
+                var s2 = data1.toString();
+                var process_22 = spawn('python', ["online_text_given.py", onlinetext]);
+                process_22.stdout.on('data', function (data) {
+                    var s4 = data.toString();
+                    s4 = parseFloat(s4).toFixed(2);
+                    //console.log('--'+s2.trim()+'--'+s4);
+                    if(s2.trim() == "yes" && s4 != 0.00){
+                        res_tbl.before("<tr><td>"+link_arr[0]+"</td><td>"+s4+"</td></tr>");
+                    }
+                    else{
+                        res_tbl.before("<tr><td>"+link_arr[0]+"</td><td>Forbidden webpage!</td></tr>");
+                    }
+
+                    //console.log(link_arr[1]);
+                    var process_3 = spawn('python', ["webpage_extract.py", link_arr[1]]);
+                    process_3.stdout.on('data', function (data) {
+                        var s2 = data.toString();
+                        var process_33 = spawn('python', ["online_text_given.py", onlinetext]);
+                        process_33.stdout.on('data', function (data) {
+                            var s4 = data.toString();
+                            s4 = parseFloat(s4).toFixed(2);
+                            //console.log('--'+s2.trim()+'--'+s4);
+                            if(s2.trim() == "yes" && s4 != 0.00){
+                                res_tbl.before("<tr><td>"+link_arr[1]+"</td><td>"+s4+"</td></tr>");
+                            }
+                            else{
+                                res_tbl.before("<tr><td>"+link_arr[1]+"</td><td>Forbidden webpage!</td></tr>");
+                            }
+
+                            //console.log(link_arr[2]);
+                            var process_4 = spawn('python', ["webpage_extract.py", link_arr[2]]);
+                            process_4.stdout.on('data', function (data) {
+                                var s2 = data.toString();
+                                var process_44 = spawn('python', ["online_text_given.py", onlinetext]);
+                                process_44.stdout.on('data', function (data) {
+                                    var s4 = data.toString();
+                                    s4 = parseFloat(s4).toFixed(2);
+                                    //console.log('--'+s2.trim()+'--'+s4);
+                                    if(s2.trim() == "yes" && s4 != 0.00){
+                                        res_tbl.before("<tr><td>"+link_arr[2]+"</td><td>"+s4+"</td></tr>");
+                                    }
+                                    else{
+                                        res_tbl.before("<tr><td>"+link_arr[2]+"</td><td>Forbidden webpage!</td></tr>");
+                                    }
+
+                                    var process_5 = spawn('python', ["webpage_extract.py", link_arr[3]]);
+                                    process_5.stdout.on('data', function (data) {
+                                        var s2 = data.toString();
+                                        var process_55 = spawn('python', ["online_text_given.py", onlinetext]);
+                                        process_55.stdout.on('data', function (data) {
+                                            var s4 = data.toString();
+                                            s4 = parseFloat(s4).toFixed(2);
+                                            //console.log('--'+s2.trim()+'--'+s4);
+                                            if(s2.trim() == "yes" && s4 != 0.00){
+                                                res_tbl.before("<tr><td>"+link_arr[3]+"</td><td>"+s4+"</td></tr>");
+                                            }
+                                            else{
+                                                res_tbl.before("<tr><td>"+link_arr[3]+"</td><td>Forbidden webpage!</td></tr>");
+                                            }
+
+                                            //console.log(link_arr[4]);
+                                            var process_5 = spawn('python', ["webpage_extract.py", link_arr[4]]);
+                                            process_5.stdout.on('data', function (data) {
+                                                var s2 = data.toString();
+                                                var process_44 = spawn('python', ["online_text_given.py", onlinetext]);
+                                                process_44.stdout.on('data', function (data) {
+                                                    var s4 = data.toString();
+                                                    s4 = parseFloat(s4).toFixed(2);
+                                                    //console.log('--'+s2.trim()+'--'+s4);
+                                                    if(s2.trim() == "yes" && s4 != 0.00){
+                                                        res_tbl.before("<tr><td>"+link_arr[4]+"</td><td>"+s4+"</td></tr>");
+                                                    }
+                                                    else{
+                                                        res_tbl.before("<tr><td>"+link_arr[4]+"</td><td>Forbidden webpage!</td></tr>");
+                                                    }
+                                                    res_tbl.fadeOut();
+                                                });
+                                            });
+                                        });
+                                    });
+                                });
+                            });
+                        });
+                    });
+                });
+            });            
+        });
+    });
+});
+</script>
+
+</html>

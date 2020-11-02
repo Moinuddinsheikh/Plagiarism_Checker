@@ -1,0 +1,13 @@
+{
+  "name": "plagiarism-checker",
+  "version": "1.0.0",
+  "description": "A simple plagiarism checker application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^10.1.1",
+    "jquery": "^3.5.1"
+  }
+}
